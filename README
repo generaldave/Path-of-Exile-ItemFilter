@@ -1,1 +1,47 @@
-Under constrcution
+Loot filter for Path of Exile: https://www.pathofexile.com/
+
+In my filter, I tried to maintain the original colours of the game, but highlight items that a person would definitely want to 
+pick up. For example Divination Cards that are either worth money or worth completing the set have a border around them that is
+the same colour as the original Divination Card text.
+
+I did this in two different filters. One is for leveling. It doesn't hide anything, except useless Divination cards. It just 
+highlights things worth picking up. I decided not to hid anything because at low levels, all gears are worth looking at. For 
+instance, when you first start a new league, you'll be wearing white gears, so blue gears are pretty much always upgrades. 
+Here are the notes in the filter file for my leveling version of the filter:
+
+# 1.  Quality Flasks - Glassblower's Baubles
+# 2.  Sulphur Flasks
+# 3.  Gems with quality have a text colour mathching border.
+# 4.  Valuable currency (Chaos Orb, Exalted Orb, Eternal Orb, and Mirror
+#  ---of Kalandra) has a tan border.
+# 5.  RGB and 6 socket, not 6 linked gear have a currency colored border.
+# 6.  6 link items that are not unique have a green border.
+# 7.  Cards have blue~ish border, same as text.
+# 8.  Show everything else.
+
+The filter I use for endgame is a lot more involved. It handles flasks as individual classes. It only shows valuable uniques. It
+breaks down maps into tiers and has text colour appropriately. For example, high tier (Tier 11+) maps which are red on the Atlas 
+have red text.It still highlights currency and Divination Cards the same as the leveling filter. It also shows Chaos recipe and
+Regal recipe items with yellow and blue borders. The filter then hides everything else that's pretty much useless. I did not
+include a secion for crafting bases or Chancing bases, as I always find it more profitable to just buy what you want. The notes 
+for my end game filter are as follows:
+
+# 1.  Quest Items
+# 2.  Map Fragments
+# 3.  Flasks
+#       3A. Life Flasks
+#       3B. Mana Flasks
+#       3C. Hybrid Flasks
+#       3D. Utility Flasks
+#       3E. Critical Utility Flasks
+# 4.  Gems
+# 5.  Currency
+# 6.  Divination Cards
+# 7.  Jewels
+# 8.  Maps
+# 9.  Uniques
+# 10. Currency Gears - 6 socketed gears and smaller RGB gears
+# 11. 6 linked gears
+# 12. Fishing Rods
+# 13. Hide non-vendor recipe gears
+# 14. Vendor recipes - Chaos with goldish border, Regal with bluish
