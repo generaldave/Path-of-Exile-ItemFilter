@@ -7,6 +7,7 @@
 # 11/2/2016
 # 
 # Updated: 11/8/2016 - Colours changed to be exact game colours.
+# Updated: 11/11/2016 - Guardian Maps
 #
 # 1.  Quest Items
 # 2.  Map Fragments
@@ -16,14 +17,17 @@
 #       3C. Hybrid Flasks
 #       3D. Utility Flasks
 #       3E. Critical Utility Flasks
-# 4.  Gems
-# 5.  Currency
-# 6.  Divination Cards
-# 7.  Jewels
-# 8.  Maps
-# 9.  Uniques
+# 4.  Gems - Quality with border, rest without
+# 5.  Currency - Higher teirs with border, rest without
+# 6.  Divination Cards - Only shows ones worth picking up
+# 7.  Jewels - Shows all
+# 8.  Maps - Shows all
+#       8A. Unique Maps
+#       8B. Guardian Maps - Text matches the Atlas
+#       8C. Normal Maps - Text matches the Atlas
+# 9.  Uniques - Show only bases with good uniques
 # 10. Currency Gears - 6 socketed gears and smaller RGB gears
-# 11. 6 linked gears
+# 11. 6 linked gears - Greenish border
 # 12. Fishing Rods
 # 13. Hide non-vendor recipe gears
 # 14. Vendor recipes - Chaos with goldish border, Regal with bluish
@@ -447,11 +451,53 @@ Show
 #
 ########################################################################
 
+########################################################################
+#
+#           8A - Unique Maps
+#
+########################################################################
+
 # Show unique maps - unique coloured text
 Show
     Class "Maps"
     Rarity Unique
     SetTextColor 175 96 37
+
+########################################################################
+#
+#           8B - Guardian Maps
+#
+########################################################################
+
+# Forge of the Phoenix - red-orange text
+Show 
+    Class "Maps"
+    BaseType "Forge of the Phoenix"
+	 SetTextColor 255 69 0
+
+# Lair of the Hydra - spring-green text
+Show 
+    Class "Maps"
+    BaseType "Lair of the Hydra"
+	 SetTextColor 0 255 127
+
+# Maze of the Minotaur - tomato text
+Show 
+    Class "Maps"
+    BaseType "Maze of the Minotaur"
+	 SetTextColor 255 99 71
+
+# Pit of the Chimera - deep-pink text
+Show 
+    Class "Maps"
+    BaseType "Pit of the Chimera"
+	 SetTextColor 255 20 147
+
+########################################################################
+#
+#           8C - Normal Maps
+#
+########################################################################
 
 # High Tier Maps - red text
 Show
