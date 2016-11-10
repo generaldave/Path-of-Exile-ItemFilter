@@ -45,9 +45,11 @@ Show
 #
 ########################################################################
 
+# Atziri, Uber Atziri, Pale Court, Guardian map fragments
 Show
     Class "Map Fragments"
     
+# Offering to the Goddess
 Show
     Class "Labyrinth Map Item"
 
