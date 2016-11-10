@@ -9,6 +9,7 @@
 # Updated: 9/12/2016
 # Updated: 9/22/2016
 # Updated: 11/2/2016
+# Updated: 11/8/2016 - Colours changed to be exact game colours.
 #
 # 1.  Quality Flasks - Glassblower's Baubles
 # 2. Sulphur Flasks
@@ -64,11 +65,37 @@ Show
 #
 ########################################################################
 
-# High level currency
+# Show Albino Rhoa Feather - with currency text coloured border and sound
+Show
+    BaseType "Albino Rhoa Feather"
+    SetBorderColor 170 158 130
+    PlayAlertSound 1 300
+
+# Show high value currency - with currency text coloured border and sound
 Show
     BaseType "Exalted Orb" "Chaos Orb" "Mirror of Kalandra" "Eternal Orb"
     SetBorderColor 170 158 130
     PlayAlertSound 1 300
+
+Show
+    BaseType "Divine Orb" "Vaal Orb" "Gemcutter's Prism" "Orb of Alchemy"
+    SetBorderColor 170 158 130
+    PlayAlertSound 1 300
+
+Show
+    BaseType "Orb of Regret" "Orb of Fusing" "Cartographer's Chisel"
+    SetBorderColor 170 158 130
+    PlayAlertSound 1 300
+
+Show
+    BaseType "Regal Orb" "Jeweller's Orb"
+    SetBorderColor 170 158 130
+    PlayAlertSound 1 300
+    
+# Show all other currency
+Show
+    Class "Currency"
+
 
 ########################################################################
 #
@@ -300,4 +327,3 @@ Hide
 
 # Show everything else
 Show
-
