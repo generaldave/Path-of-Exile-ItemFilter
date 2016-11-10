@@ -9,7 +9,7 @@
 # Updated: 11/8/2016 - Colours changed to be exact game colours.
 # Updated: 11/11/2016 - Guardian Maps
 #
-# 1.  Quest Items
+# 1.  Quest and Labyrinth Items
 # 2.  Map Fragments
 # 3.  Flasks
 #       3A. Life Flasks
@@ -36,12 +36,20 @@
 
 ########################################################################
 #
-# 1 - QUEST ITEMS
+# 1 - QUEST AND LABYRINTH ITEMS
 #
 ########################################################################
 
 Show
     Class "Quest Items"
+    
+# Labyrinth Item = Keys
+Show
+    Class "Labyrinth Item"
+    
+# Labyrinth Trinket = Easier Izaro fights
+Show
+    Class "Labyrinth Trinket"
 
 ########################################################################
 #
