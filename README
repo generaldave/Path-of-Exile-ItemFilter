@@ -4,6 +4,8 @@ In my filter, I tried to maintain the original colours of the game, but highligh
 
 I did this in two different filters. One is for leveling. It doesn't hide anything, except useless Divination cards. It just highlights things worth picking up. I decided not to hid anything because at low levels, all gears are worth looking at. For instance, when you first start a new league, you'll be wearing white gears, so blue gears are pretty much always upgrades. Here are the notes in the filter file for my leveling version of the filter:
 
+# Updated: 11/10/2016 - Fixed colouring
+#
 # 1. Quality Flasks - Glassblower's Baubles
 # 2. Sulphur Flasks
 # 3. Gems with quality have a text colour mathching border.
@@ -16,6 +18,8 @@ I did this in two different filters. One is for leveling. It doesn't hide anythi
 
 The filter I use for endgame is a lot more involved. It handles flasks as individual classes. It only shows valuable uniques. It breaks down maps into tiers and has text colour appropriately. For example, high tier (Tier 11+) maps which are red on the Atlas have red text.It still highlights currency and Divination Cards the same as the leveling filter. It also shows Chaos recipe and Regal recipe items with yellow and blue borders. The filter then hides everything else that's pretty much useless. I did not include a secion for crafting bases or Chancing bases, as I always find it more profitable to just buy what you want. The notes for my end game filter are as follows:
 
+# Updated: 11/11/2016 - Fixed Discrepancy in maps
+#
 # 1.  Quest and Labyrinth Items
 # 2.  Map Fragments
 # 3.  Flasks
@@ -38,3 +42,35 @@ The filter I use for endgame is a lot more involved. It handles flasks as indivi
 # 12. Fishing Rods
 # 13. Hide non-vendor recipe gears
 # 14. Vendor recipes - Chaos with goldish border, Regal with bluish
+
+I just created a "dynamic" filter. Basically, it just combines the two and switches over to the End Game style around Merciless Dried Lake. The notes are:
+
+# 11/11/2016 - Created
+#
+# 1.  Quest and Labyrinth Items
+# 2.  Map Fragments
+# 3.  Flasks
+#       3A. Quality Flasks
+#       3B. Dynamic Flasks - Show all 67 and under (Dried Lake)
+#       3C. Life Flasks
+#       3D. Mana Flasks
+#       3E. Hybrid Flasks
+#       3F. Utility Flasks
+#       3G. Critical Utility Flasks
+# 4.  Gems - Quality with border, rest without
+# 5.  Currency - Higher teirs with border, rest without
+# 6.  Divination Cards - Only shows ones worth picking up
+# 7.  Jewels - Shows all
+# 8.  Maps - Shows all
+#       8A. Unique Maps
+#       8B. Guardian Maps - Text matches the Atlas
+#       8C. Normal Maps - Text matches the Atlas
+# 9.  Uniques
+#       9A. Dynamic Uniques - Show all under 67 (Dried Lake)
+#       9B. Uniques - Show only bases with good uniques
+# 10. Currency Gears - 6 socketed gears and smaller RGB gears
+# 11. 6 linked gears - Greenish border
+# 12. Fishing Rods
+# 13. Dynamic generic items - everything else under 67 (Dried Lake)
+# 14. Hide non-vendor recipe gears
+# 15. Vendor recipes - Chaos with goldish border, Regal with bluish
