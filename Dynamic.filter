@@ -1,0 +1,799 @@
+########################################################################
+#
+# David Fuller
+#
+# Path of Exile loot filter.
+#
+# 11/11/2016
+#
+# 1.  Quest and Labyrinth Items
+# 2.  Map Fragments
+# 3.  Flasks
+#       3A. Quality Flasks
+#       3B. Dynamic Flasks - Show all 67 and under (Dried Lake)
+#       3C. Life Flasks
+#       3D. Mana Flasks
+#       3E. Hybrid Flasks
+#       3F. Utility Flasks
+#       3G. Critical Utility Flasks
+# 4.  Gems - Quality with border, rest without
+# 5.  Currency - Higher teirs with border, rest without
+# 6.  Divination Cards - Only shows ones worth picking up
+# 7.  Jewels - Shows all
+# 8.  Maps - Shows all
+#       8A. Unique Maps
+#       8B. Guardian Maps - Text matches the Atlas
+#       8C. Normal Maps - Text matches the Atlas
+# 9.  Uniques
+#       9A. Dynamic Uniques - Show all under 67 (Dried Lake)
+#       9B. Uniques - Show only bases with good uniques
+# 10. Currency Gears - 6 socketed gears and smaller RGB gears
+# 11. 6 linked gears - Greenish border
+# 12. Fishing Rods
+# 13. Dynamic generic items - everything else under 67 (Dried Lake)
+# 14. Hide non-vendor recipe gears
+# 15. Vendor recipes - Chaos with goldish border, Regal with bluish
+#
+########################################################################
+
+########################################################################
+#
+# 1 - QUEST AND LABYRINTH ITEMS
+#
+########################################################################
+
+Show
+    Class "Quest Items"
+    
+# Labyrinth Item = Keys
+Show
+    Class "Labyrinth Item"
+    
+# Labyrinth Trinket = Easier Izaro fights
+Show
+    Class "Labyrinth Trinket"
+
+########################################################################
+#
+# 2 - MAP FRAGMENTS
+#
+########################################################################
+
+# Atziri, Uber Atziri, Pale Court, Guardian map fragments
+Show
+    Class "Map Fragments"
+    
+# Offering to the Goddess
+Show
+    Class "Labyrinth Map Item"
+
+########################################################################
+#
+# 3 - FLASKS
+#
+########################################################################
+
+########################################################################
+#
+#           3A - QUALITY FLASKS - GLASSBLOWERS BAUBLES
+#
+########################################################################
+
+Show
+    Class "Life Flasks" "Mana Flasks" "Hybrid Flasks"
+	 Quality > 0
+	 SetBorderColor 136 136 255
+
+Show
+    Class "Utility Flasks" "Critical Utility Flasks"
+	 Quality > 0
+	 SetBorderColor 136 136 255
+
+########################################################################
+#
+#           3B - DYNAMIC FLASKS
+#
+########################################################################
+
+Show
+    Class "Life Flasks" "Mana Flasks" "Hybrid Flasks"
+	 ItemLevel <= 67
+	 DropLevel <= 67
+
+Show
+    Class "Utility Flasks" "Critical Utility Flasks"
+	 ItemLevel <= 67
+	 DropLevel <= 67
+
+########################################################################
+#
+#           3C - LIFE FLASKS
+#
+########################################################################
+
+# Hide all other Life Flasks
+Hide
+    Class "Life Flasks"
+    SetFontSize 18
+
+########################################################################
+#
+#           3D - MANA FLASKS
+#
+########################################################################
+
+# Hide all other Mana Flasks
+Hide
+    Class "Mana Flasks"
+    SetFontSize 18
+
+########################################################################
+#
+#           3E - HYBRID FLASKS
+#
+########################################################################
+
+# Show Unique Hybrid Flasks
+# Large Hybrid Flask = Divination Distillate
+Show
+    Class "Hybrid Flasks"    
+    BaseType "Large Hybrid Flask"
+    Rarity Unique
+    PlayAlertSound 1 300
+
+# Hide all other Hybrid Flasks
+Hide
+    Class "Hybrid Flasks"
+    SetFontSize 18
+
+########################################################################
+#
+#           3F - UTILITY FLASKS
+#
+########################################################################
+
+# Show Unique Utility Flasks
+# Sapphire Flask = Taste of Hate
+# Granite Flask = Lion's Roar
+# Sulphur Flask = The Overflowing Chalice
+Show
+    Class "Utility Flasks"
+    BaseType "Sapphire Flask" "Granite Flask" "Sulphur Flask"
+    Rarity Unique
+    PlayAlertSound 1 300
+
+# Stibnite Flask = Witchfire Brew
+# Amethyst Flask = Atziri's Promise
+# Ruby Flask = Dying Sun
+Show
+    Class "Utility Flasks"
+    BaseType "Stibnite Flask" "Amethyst Flask" "Ruby Flask"
+    Rarity Unique
+    PlayAlertSound 1 300
+
+# Granite Flask = Rumi's Concoction
+# Topaz Flask = Vessel of Vinktar
+# Silver Flask = Kiara's Determination
+Show
+    Class "Utility Flasks"
+    BaseType "Granite Flask" "Topaz Flask" "Silver Flask"
+    Rarity Unique
+    PlayAlertSound 1 300
+
+# Hide all other Utility Flasks
+Hide
+    Class "Utility Flasks"
+    SetFontSize 18
+
+########################################################################
+#
+#           3E - CRITICAL UTILITY FLASKS
+#
+########################################################################
+
+# Hide all other Critical Utility Flasks
+Hide
+    Class "Critical Utility Flasks"
+    SetFontSize 18
+
+########################################################################
+#
+# 4 - GEMS
+#
+########################################################################
+
+# Show Quality Gems - with a tealish border
+Show
+    Class "Gem"
+    Quality > 0
+    SetBorderColor 27 162 155
+    
+# Show all other gems
+Show
+    Class "Gem"
+
+########################################################################
+#
+# 5 - CURRENCY
+#
+########################################################################
+
+# Show Albino Rhoa Feather - with currency text coloured border and sound
+Show
+    BaseType "Albino Rhoa Feather"
+    SetBorderColor 170 158 130
+    PlayAlertSound 1 300
+
+# Show high value currency - with currency text coloured border and sound
+Show
+    BaseType "Exalted Orb" "Chaos Orb" "Mirror of Kalandra" "Eternal Orb"
+    SetBorderColor 170 158 130
+    PlayAlertSound 1 300
+
+Show
+    BaseType "Divine Orb" "Vaal Orb" "Gemcutter's Prism" "Orb of Alchemy"
+    SetBorderColor 170 158 130
+    PlayAlertSound 1 300
+
+Show
+    BaseType "Orb of Regret" "Orb of Fusing" "Cartographer's Chisel"
+    SetBorderColor 170 158 130
+    PlayAlertSound 1 300
+
+Show
+    BaseType "Regal Orb" "Jeweller's Orb"
+    SetBorderColor 170 158 130
+    PlayAlertSound 1 300
+    
+# Show all other currency
+Show
+    Class "Currency"
+
+########################################################################
+#
+# 6 - Divination Cards
+#
+########################################################################
+
+# Show High tier Divination Cards - with sound and bluish border
+Show
+    Class "Divination"
+    BaseType "Abandoned Wealth" "The Aesthete" "The Artist"
+    SetBorderColor 130 190 255
+    PlayAlertSound 1 300
+
+Show
+    Class "Divination"
+    BaseType "The Avenger" "Bowyer's Dream" "The Brittle Emperor"
+    SetBorderColor 130 190 255
+    PlayAlertSound 1 300
+
+Show
+    Class "Divination"
+    BaseType "The Calling" "The Cataclysm" "The Celestial Justicar"
+    SetBorderColor 130 190 255
+    PlayAlertSound 1 300
+
+Show
+    Class "Divination"
+    BaseType "The Chains that Bind" "The Cursed King" "The Dapper Prodigy"
+    SetBorderColor 130 190 255
+    PlayAlertSound 1 300
+
+Show
+    Class "Divination"
+    BaseType "The Dark Mage" "Death" "Dialla's Subjugation" "The Doctor"
+    SetBorderColor 130 190 255
+    PlayAlertSound 1 300
+
+Show
+    Class "Divination"
+    BaseType "The Dragon's Heart" "Earth Drinker" "Emperor of Purity"
+    SetBorderColor 130 190 255
+    PlayAlertSound 1 300
+
+Show
+    Class "Divination"
+    BaseType "The Encroaching Darkness" "The Enlightened" "The Ethereal"
+    SetBorderColor 130 190 255
+    PlayAlertSound 1 300
+
+Show
+    Class "Divination"
+    BaseType "The Fiend" "The Fletcher" "The Formless Sea" "The Fox"
+    SetBorderColor 130 190 255
+    PlayAlertSound 1 300
+
+Show
+    Class "Divination"
+    BaseType "Glimmer of Hope" "The Harvester" "The Hoarder" "Hope"
+    SetBorderColor 130 190 255
+    PlayAlertSound 1 300
+
+Show
+    Class "Divination"
+    BaseType "House of Mirrors" "Humility" "The Hunger" "Hunter's Reward"
+    SetBorderColor 130 190 255
+    PlayAlertSound 1 300
+
+Show
+    Class "Divination"
+    BaseType "The Immortal" "The Inventor" "Jack in the Box" "The Jester"
+    SetBorderColor 130 190 255
+    PlayAlertSound 1 300
+
+Show
+    Class "Divination"
+    BaseType "The King's Heart" "Last Hope" "The Last One Standing"
+    SetBorderColor 130 190 255
+    PlayAlertSound 1 300
+
+Show
+    Class "Divination"
+    BaseType "Lost Worlds" "Lucky Deck" "Lysah's Respite" "Mawr Blaidd"
+    SetBorderColor 130 190 255
+    PlayAlertSound 1 300
+
+Show
+    Class "Divination"
+    BaseType "Merciless Armament" "The Offering" "The Penitent"
+    SetBorderColor 130 190 255
+    PlayAlertSound 1 300
+
+Show
+    Class "Divination"
+    BaseType "Pride Before the Fall" "The Queen" "Rats" "Time-Lost Relic"
+    SetBorderColor 130 190 255
+    PlayAlertSound 1 300
+
+Show
+    Class "Divination"
+    BaseType "The Road to Power" "The Sephirot" "The Soul"
+    SetBorderColor 130 190 255
+    PlayAlertSound 1 300
+
+Show
+    Class "Divination"
+    BaseType "The Stormcaller" "The Thaumaturgist" "Treasure Hunter"
+    SetBorderColor 130 190 255
+    PlayAlertSound 1 300
+
+Show
+    Class "Divination"
+    BaseType "The Trial" "The Union" "The Valkyrie" "The Vast"
+    SetBorderColor 130 190 255
+    PlayAlertSound 1 300
+
+Show
+    Class "Divination"
+    BaseType "Vinia's Token" "The Void" "The Warlord" "Wealth and Power"
+    SetBorderColor 130 190 255
+    PlayAlertSound 1 300
+
+Show
+    Class "Divination"
+    BaseType "The Wrath"
+    SetBorderColor 130 190 255
+    PlayAlertSound 1 300
+
+# Show all other Divination Cards worth picking up
+
+# Assassin's Favour = 9 for unique dagger
+# Audacity = 5 for Corrupted Doryani's Fist
+# The Battle Born = 5 for unique axe
+Show
+    Class "Divination"
+    BaseType "Assassin's Favour" "Audacity" "The Battle Born"
+    SetBorderColor 130 190 255
+
+# The Betrayal = 9 for Maligaro's Virtuosity
+# Blind Venture = 7 for Corrupted unique ring
+# The Body = 4 for unique body armour
+# The Cartographer = 1 for 10 Cartographer's Chisels
+Show
+    Class "Divination"
+    BaseType "The Betrayal" "Blind Venture" "The Body" "The Cartographer"
+    SetBorderColor 130 190 255
+
+# The Catalyst = 3 for a Vaal Orb
+# Chaotic Disposition = 1 for 5 Chaos
+# Doedre's Madness = 9 for unique Doedre item
+Show
+    Class "Divination"
+    BaseType "The Catalyst" "Chaotic Disposition" "Doedre's Madness"
+    SetBorderColor 130 190 255
+
+# Emperor's Luck =  5 for random 5x currency
+# The Gambler = 5 for random Divination Card
+# The Gemcutter = 3 for a Gemcutter's Prism
+Show
+    Class "Divination"
+    BaseType "Emperor's Luck" "The Gambler" "The Gemcutter"
+    SetBorderColor 130 190 255
+
+# Gemcutter's Promise = 3 for a random 20% gem
+# Her Mask = 4 for a random Sacrifice Fragment
+# Heterochromia = 2 for random unique two stone ring
+# Hubris = 5 for random unique ring
+Show
+    Class "Divination"
+    BaseType "Gemcutter's Promise" "Her Mask" "Heterochromia" "Hubris"
+    SetBorderColor 130 190 255
+
+# The Lover = 2 for random rare unid jewellery
+# Lucky Connections = 7 for 20 Orbs of Fusing
+# Rain of Chaos = 8 for 1 Chaos Orb
+# The Risk = 3 for Ventor's Gamble
+Show
+    Class "Divination"
+    BaseType "The Lover" "Lucky Connections" "Rain of Chaos" "The Risk"
+    SetBorderColor 130 190 255
+
+# Scholar of the Seas = 7 for Mao Kun
+# The Surveyor = 4 for a tier 14 map
+Show
+    Class "Divination"
+    BaseType "Scholar of the Seas" "The Surveyor"
+    SetBorderColor 130 190 255
+
+# Hide the rest of the Divination Cards
+Hide
+    Class "Divination"
+    SetFontSize 18
+
+########################################################################
+#
+# 7 - JEWELS
+#
+########################################################################
+
+# Show unique jewels - unique coloured text
+Show
+    Class "Jewel"
+    Rarity Unique
+    SetTextColor 175 96 37
+
+# Show blue and yellow jewels
+Show
+    Class "Jewel"
+
+########################################################################
+#
+# 8 - MAPS
+#
+########################################################################
+
+########################################################################
+#
+#           8A - Unique Maps
+#
+########################################################################
+
+# Show unique maps - unique coloured text
+Show
+    Class "Maps"
+    Rarity Unique
+    SetTextColor 175 96 37
+
+########################################################################
+#
+#           8B - Guardian Maps
+#
+########################################################################
+
+# Forge of the Phoenix - red-orange text
+Show 
+    Class "Maps"
+    BaseType "Forge of the Phoenix"
+	 SetTextColor 250 140 0
+
+# Lair of the Hydra - spring-green text
+Show 
+    Class "Maps"
+    BaseType "Lair of the Hydra"
+	 SetTextColor 0 255 127
+
+# Maze of the Minotaur - tomato text
+Show 
+    Class "Maps"
+    BaseType "Maze of the Minotaur"
+	 SetTextColor 255 99 71
+
+# Pit of the Chimera - deep-pink text
+Show 
+    Class "Maps"
+    BaseType "Pit of the Chimera"
+	 SetTextColor 255 20 147
+
+########################################################################
+#
+#           8C - Normal Maps
+#
+########################################################################
+
+# High Tier Maps - red text
+Show
+    Class "Maps"
+    DropLevel >= 78
+    SetTextColor 205 0 0
+
+# Mid Tier Maps - yellow text
+Show 
+    Class "Maps"
+    DropLevel >= 73
+    SetTextColor 228 194 60
+
+# Low Tier Maps - white text
+Show 
+    Class "Maps" 
+    DropLevel >= 58
+    SetTextColor 255 255 255
+
+# Make sure all maps are shown
+Show 
+    Class "Maps"
+
+########################################################################
+#
+# 9 - Uniques
+#
+########################################################################
+
+########################################################################
+#
+#           9A - DYNAMIC UNIQUES
+#
+########################################################################
+
+Show
+	 Rarity Unique
+	 ItemLevel < 67
+	 DropLevel < 67
+
+########################################################################
+#
+#           9B - UNIQUES
+#
+########################################################################
+
+# Show good uniques - with sound
+# Simple Robe = Tabula Rasa
+# Varnished Coat = Carcass Jack
+# Gold Ring = Andvarius and Ventor's Gamble
+# Ursine Pelt = Rat's Nest
+Show
+    Rarity Unique
+    BaseType "Simple Robe" "Varnished Coat" "Gold Ring" "Ursine Pelt"
+    PlayAlertSound 1 300
+
+# Champion Kite Shield = Aegis Aurora
+# Occultist's Vestment = Shavronne's Wrappings
+# Glorious Plate = Kaom's Heart
+Show
+    Rarity Unique
+    BaseType "Champion Kite Shield" "Occultist's Vestment" "Glorious Plate"
+    PlayAlertSound 1 300
+
+# Titanium Spirit Shield = Rathpith Globe
+# Siege Axe = Soul Taker
+# Prophecy Wand = Void Battery
+Show
+    Rarity Unique
+    BaseType "Titanium Spirit Shield" "Siege Axe" "Prophecy Wand"
+    PlayAlertSound 1 300
+
+# Sacrificial Garb = Atziri's Splendour
+# Sorcerer Boots = Skyforth and Steppan Eard
+# Deicide Mask = Heretic's Veil
+Show
+    Rarity Unique
+    BaseType "Sacrificial Garb" "Sorcerer Boots" "Deicide Mask"
+    PlayAlertSound 1 300
+
+# Imperial Skean = Divinarius
+# Rawhide Boots = Seven-League Step
+# Assassin's Garb = Cospri's Will
+Show
+    Rarity Unique
+    BaseType "Imperial Skean" "Rawhide Boots" "Assassin's Garb"
+    PlayAlertSound 1 300
+
+# Ezomyte Burgonet = Abyssus
+# Two-Stone Ring = Berek's Set, Rigwald's Crest, and Call of the Brotherhood
+# Savant's Robe = Cloak of Tawm'r Isley
+Show
+    Rarity Unique
+    BaseType "Ezomyte Burgonet" "Two-Stone Ring" "Savant's Robe"
+    PlayAlertSound 1 300
+
+# Vaal Regalia = The Beast Fur Shawl
+# Jewelled Foil = Cospri's Malice
+# Gladiator Plate = The Brass Dome
+Show
+    Rarity Unique
+    BaseType "Vaal Regalia" "Jewelled Foil" "Gladiator Plate"
+    PlayAlertSound 1 300
+
+# Crusader Boots = Death's Door
+# Jasper Chopper = The Harvest
+# Judgement Staff = Hegemony's Era
+Show
+    Rarity Unique
+    BaseType "Crusader Boots" "Jasper Chopper" "Judgement Staff"
+    PlayAlertSound 1 300
+
+# Nubuck Boots = Goldwyrm
+# Terror Maul = Kongor's Undying Rage
+# Full Wyrmscale = Belly of the Beast
+Show
+    Rarity Unique
+    BaseType "Nubuck Boots" "Terror Maul" "Full Wyrmscale"
+    PlayAlertSound 1 300
+
+# Gavel = Mjolner
+# Archon Kite Shield = Prism Guardian
+# Reinforced Greaves = Windscream
+Show
+    Rarity Unique
+    BaseType "Gavel" "Archon Kite Shield" "Reinforced Greaves"
+    PlayAlertSound 1 300
+
+# Imperial Bow = Windripper
+# Conjurer Boots = Rainbow Stride
+# Nightmare Bascinet = Bringer of Rain and Devoto's Devotion
+Show
+    Rarity Unique
+    BaseType "Imperial Bow" "Conjurer Boots" "Nightmare Bascinet"
+    PlayAlertSound 1 300
+
+# Sharkskin Boots = The Blood Dance
+# Imperial Staff = Agnerod Set
+# Deerskin Gloves = Maligaro's Virtuosity
+Show
+    Rarity Unique
+    BaseType "Sharkskin Boots" "Imperial Staff" "Deerskin Gloves"
+    PlayAlertSound 1 300
+
+# Paua Ring = Doedre's Damning, Perandus Signet, and Praxis
+# Vaal Axe = Atziri's Disfavour
+# Spine Bow = Reach of the Council
+# Slaugher Knife = Bino's Kitchen Knife
+Show
+    Rarity Unique
+    BaseType "Paua Ring" "Vaal Axe" "Spine Bow" "Slaughter Knife"
+    PlayAlertSound 1 300
+
+# Sinner Tricorne = Alpha's Howl
+# Hubris Circlet = Crown of Eyes and Ylfeban's Tricker
+# Strapped Mitts = Facebreaker
+Show
+    Rarity Unique
+    BaseType "Sinner Tricorne" "Hubris Circlet" "Strapped Mitts"
+    PlayAlertSound 1 300
+
+# Eternal Sword = Dreamfeather
+# Onyx Amulet = Astramentis and Hinekora's Sight
+# Penetrating Arrow Quiver = Drillneck
+Show
+    Rarity Unique
+    BaseType "Eternal Sword" "Onyx Amulet" "Penetrating Arrow Quiver"
+    PlayAlertSound 1 300
+
+# Broadhead Arrow Quiver = RearGuard
+# Fiend Dagger = The Consuming Dark
+# Exqusite Leather = Kintsugi
+Show
+    Rarity Unique
+    BaseType "Broadhead Arrow Quiver" "Fiend Dagger" "Exquisite Leather"
+    PlayAlertSound 1 300
+
+# Desert Brigandine = Lightning Coil
+# Spike-Point Arrow Quiver = Soul Strike
+Show
+    Rarity Unique
+    BaseType "Desert Brigandine" "Spike-Point Arrow Quiver"
+    PlayAlertSound 1 300
+
+# Woodsplitter = Cauteriser
+# Harbinger Bow = Slivertongue
+# Carnal Sceptre = Breath of the Council
+Show
+    Rarity Unique
+    BaseType "Woodsplitter" "Harbinger Bow" "Carnal Sceptre"
+    PlayAlertSound 1 300
+
+# Infernal Sword = Starforge
+Show
+    Rarity Unique
+    BaseType "Infernal Sword"
+    PlayAlertSound 1 300
+    
+# Hide all other uniques
+Hide
+    Rarity Unique
+    PlayAlertSound 1 0
+    SetFontSize 18
+
+########################################################################
+#
+# 10 - CURRENCY GEARS
+#
+########################################################################
+
+# RGB = Chromatic - with currency text coloured border
+Show
+    SocketGroup RGB
+    Width <= 2
+    Height < 3
+    SetBorderColor 170 158 130
+
+# 6 socket = 7 Jewelers - with currency text coloured border
+Show
+    Sockets 6
+    LinkedSockets < 6
+    Rarity < Unique
+    SetBorderColor 170 158 130
+    PlayAlertSound 1 300
+
+########################################################################
+#
+# 11 - 6 LINKED GEARS
+#
+########################################################################
+
+Show
+    LinkedSockets 6
+    Rarity < Unique
+    SetBorderColor 74 230 58
+    PlayAlertSound 1 300
+    
+########################################################################
+#
+# 12 - FISHING RODS
+#
+########################################################################
+
+Show
+    Class "Fishing Rods"
+
+########################################################################
+#
+# 13 - DYNAMIC GENERIC ITEMS
+#
+########################################################################
+
+Show
+	 ItemLevel < 67
+	 DropLevel < 67
+
+########################################################################
+#
+# 14 - NON VENDOR RECIPE
+#
+########################################################################
+
+Hide
+    Class "Dagger" "Shield" "Wand" "Claw" "One Hand" "Quiver" "Sceptres"
+    SetFontSize 18
+
+########################################################################
+#
+# 15 - VENDOR RECIPE
+#
+########################################################################
+
+# Regal recipe - blue~ish border
+Show
+    ItemLevel >= 75
+    Rarity = Rare
+    SetBorderColor 47 122 159
+
+# Chaos recipe - gold~ish border
+Show
+    ItemLevel >= 60
+    Rarity = Rare
+    SetBorderColor 255 255 119
+
+# Hide non vendor recipe gears
+Hide
+    SetFontSize 18
