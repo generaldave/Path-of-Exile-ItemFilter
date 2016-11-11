@@ -6,8 +6,9 @@
 #
 # 11/2/2016
 # 
-# Updated: 11/8/2016 - Colours changed to be exact game colours.
-# Updated: 11/11/2016 - Guardian Maps
+# Updated: 11/8/2016 - Colours changed to be exact game colours
+# Updated: 11/10/2016 - Guardian Maps
+# Updated: 11/11/2016 - Fixed Discrepancy in maps
 #
 # 1.  Quest and Labyrinth Items
 # 2.  Map Fragments
@@ -519,11 +520,11 @@ Show
     DropLevel >= 73
     SetTextColor 228 194 60
 
-# Low Tier Maps - grey text
+# Low Tier Maps - white text
 Show 
     Class "Maps" 
-    DropLevel >= 69
-    SetTextColor 105 105 105
+    DropLevel >= 58
+    SetTextColor 255 255 255
 
 # Make sure all maps are shown
 Show 
