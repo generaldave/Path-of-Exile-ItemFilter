@@ -481,7 +481,7 @@ Show
 Show 
     Class "Maps"
     BaseType "Forge of the Phoenix"
-	 SetTextColor 255 69 0
+	 SetTextColor 250 140 0
 
 # Lair of the Hydra - spring-green text
 Show 
