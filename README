@@ -1,5 +1,7 @@
 Loot filter for Path of Exile: https://www.pathofexile.com/
 
+A good filter guide: http://pathofexile.gamepedia.com/Item_filter_guide
+
 In my filter, I tried to maintain the original colours of the game, but highlight items that a person would definitely want to pick up. For example Divination Cards that are either worth money or worth completing the set have a border around them that is the same colour as the original Divination Card text.
 
 I did this in two different filters. One is for leveling. It doesn't hide anything, except useless Divination cards. It just highlights things worth picking up. I decided not to hid anything because at low levels, all gears are worth looking at. For instance, when you first start a new league, you'll be wearing white gears, so blue gears are pretty much always upgrades. Here are the notes in the filter file for my leveling version of the filter:
