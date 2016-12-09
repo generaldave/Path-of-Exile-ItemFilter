@@ -10,6 +10,7 @@
 # Updated: 9/22/2016
 # Updated: 11/2/2016
 # Updated: 11/10/2016 - Fixed colouring
+# Updated: 12/9/2016  - Added rules for Breach Splinters
 #
 # 1. Quality Flasks - Glassblower's Baubles
 # 2. Sulphur Flasks
@@ -65,6 +66,28 @@ Show
 #
 ########################################################################
 
+# Breach Splinters - text colour same as default damage colour
+Show   # Chaos
+	 BaseType "Splinter of Chayula"
+    SetTextColor 208 32 144
+
+Show   # Lightning
+	 BaseType "Splinter of Esh"
+    SetTextColor 255 215 0
+
+Show   # Cold
+	 BaseType "Splinter of Tul"
+    SetTextColor 54 100 146
+
+Show   # Physical
+    BaseType "Splinter of Uul-Netol"
+    SetTextColor 124 81 50
+
+Show   # Fire
+	 BaseType "Splinter of Xoph"
+    SetTextColor 150 0 0
+    
+
 # Show Albino Rhoa Feather - with currency text coloured border and sound
 Show
     BaseType "Albino Rhoa Feather"
@@ -82,20 +105,18 @@ Show
     SetBorderColor 170 158 130
     PlayAlertSound 1 300
 
+# Show mid value currency - with currency text coloured border, no sound
 Show
     BaseType "Orb of Regret" "Orb of Fusing" "Cartographer's Chisel"
     SetBorderColor 170 158 130
-    PlayAlertSound 1 300
 
 Show
     BaseType "Regal Orb" "Jeweller's Orb"
     SetBorderColor 170 158 130
-    PlayAlertSound 1 300
     
 # Show all other currency
 Show
     Class "Currency"
-
 
 ########################################################################
 #
@@ -130,11 +151,11 @@ Show
 
 ########################################################################
 #
-# 6 - Divination Cards
+# Divination Cards
 #
 ########################################################################
 
-# Show High tier Divination Cards - with sound and bluish border
+# Show sellable Divination Cards - with sound and bluish border
 Show
     Class "Divination"
     BaseType "Abandoned Wealth" "The Aesthete" "The Artist"
@@ -263,7 +284,6 @@ Show
 Show
     Class "Divination"
     BaseType "Assassin's Favour" "Audacity" "The Battle Born"
-    SetBorderColor 130 190 255
 
 # The Betrayal = 9 for Maligaro's Virtuosity
 # Blind Venture = 7 for Corrupted unique ring
@@ -272,7 +292,6 @@ Show
 Show
     Class "Divination"
     BaseType "The Betrayal" "Blind Venture" "The Body" "The Cartographer"
-    SetBorderColor 130 190 255
 
 # The Catalyst = 3 for a Vaal Orb
 # Chaotic Disposition = 1 for 5 Chaos
@@ -280,7 +299,6 @@ Show
 Show
     Class "Divination"
     BaseType "The Catalyst" "Chaotic Disposition" "Doedre's Madness"
-    SetBorderColor 130 190 255
 
 # Emperor's Luck =  5 for random 5x currency
 # The Gambler = 5 for random Divination Card
@@ -288,7 +306,6 @@ Show
 Show
     Class "Divination"
     BaseType "Emperor's Luck" "The Gambler" "The Gemcutter"
-    SetBorderColor 130 190 255
 
 # Gemcutter's Promise = 3 for a random 20% gem
 # Her Mask = 4 for a random Sacrifice Fragment
@@ -297,7 +314,6 @@ Show
 Show
     Class "Divination"
     BaseType "Gemcutter's Promise" "Her Mask" "Heterochromia" "Hubris"
-    SetBorderColor 130 190 255
 
 # The Lover = 2 for random rare unid jewellery
 # Lucky Connections = 7 for 20 Orbs of Fusing
@@ -306,19 +322,17 @@ Show
 Show
     Class "Divination"
     BaseType "The Lover" "Lucky Connections" "Rain of Chaos" "The Risk"
-    SetBorderColor 130 190 255
 
 # Scholar of the Seas = 7 for Mao Kun
 # The Surveyor = 4 for a tier 14 map
 Show
     Class "Divination"
     BaseType "Scholar of the Seas" "The Surveyor"
-    SetBorderColor 130 190 255
 
 # Hide the rest of the Divination Cards
 Hide
     Class "Divination"
-    SetFontSize 20
+    SetFontSize 18
 
 ########################################################################
 #
