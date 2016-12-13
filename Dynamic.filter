@@ -6,18 +6,17 @@
 #
 # 11/11/2016 - Created
 #
-# 12/9/2016 - Updated: Added rules for Breach Splinters
+# 12/9/2016  - Updated: Added rules for Breach Splinters
+# 12/13.2016 - Updated: Made Flasks dynamic
 #
 # 1.  Quest and Labyrinth Items
 # 2.  Map Fragments
 # 3.  Flasks
-#       3A. Quality Flasks
-#       3B. Dynamic Flasks - Show all 67 and under (Dried Lake)
-#       3C. Life Flasks
-#       3D. Mana Flasks
-#       3E. Hybrid Flasks
-#       3F. Utility Flasks
-#       3G. Critical Utility Flasks
+#       3A. Life Flasks
+#       3B. Mana Flasks
+#       3C. Hybrid Flasks
+#       3D. Utility Flasks
+#       3E. Critical Utility Flasks
 # 4.  Gems - Quality with border, rest without
 # 5.  Currency - Higher teirs with border, rest without
 # 6.  Divination Cards - Only shows ones worth picking up
@@ -35,7 +34,7 @@
 # 13. Dynamic generic items - everything else under 67 (Dried Lake)
 # 14. Hide non-vendor recipe gears
 # 15. Vendor recipes - Chaos with goldish border, Regal with bluish
-# 
+#
 ########################################################################
 
 ########################################################################
@@ -77,41 +76,83 @@ Show
 
 ########################################################################
 #
-#           3A - QUALITY FLASKS - GLASSBLOWERS BAUBLES
+#           3A - LIFE FLASKS
 #
 ########################################################################
+
+# Show quality Life Flasks with a bluish border
+Show
+    Class "Life Flasks"
+    Rarity < Unique
+    Quality > 0
+    SetBorderColor 136 136 255
+
+# Show Life Flasks dynamically
+Show
+    BaseType "Small Life Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel < 3
 
 Show
-    Class "Life Flasks" "Mana Flasks" "Hybrid Flasks"
-	 Quality > 0
-	 SetBorderColor 136 136 255
+    BaseType "Medium Life Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel < 6
 
 Show
-    Class "Utility Flasks" "Critical Utility Flasks"
-	 Quality > 0
-	 SetBorderColor 136 136 255
-
-########################################################################
-#
-#           3B - DYNAMIC FLASKS
-#
-########################################################################
+    BaseType "Large Life Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel < 12
 
 Show
-    Class "Life Flasks" "Mana Flasks" "Hybrid Flasks"
-	 ItemLevel <= 67
-	 DropLevel <= 67
+    BaseType "Greater Life Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel < 18
 
 Show
-    Class "Utility Flasks" "Critical Utility Flasks"
-	 ItemLevel <= 67
-	 DropLevel <= 67
+    BaseType "Grand Life Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel < 24
 
-########################################################################
-#
-#           3C - LIFE FLASKS
-#
-########################################################################
+Show
+    BaseType "Giant Life Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel < 30
+
+Show
+    BaseType "Colossal Life Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel < 36
+
+Show
+    BaseType "Sacred Life Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel < 42
+
+Show
+    BaseType "Hallowed Life Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel < 50
+
+Show
+    BaseType "Sanctified Life Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel < 60
+
+Show
+    BaseType "Eternal Life Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel <= 67
 
 # Hide all other Life Flasks
 Hide
@@ -120,9 +161,83 @@ Hide
 
 ########################################################################
 #
-#           3D - MANA FLASKS
+#           3B - MANA FLASKS
 #
 ########################################################################
+
+# Show quality Mana Flasks with a bluish border
+Show
+    Class "Mana Flasks"
+    Rarity < Unique
+    Quality > 0
+    SetBorderColor 136 136 255
+
+# Show Mana Flasks dynamically
+Show
+    BaseType "Small Mana Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel < 3
+
+Show
+    BaseType "Medium Mana Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel < 6
+
+Show
+    BaseType "Large Mana Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel < 12
+
+Show
+    BaseType "Greater Mana Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel < 18
+
+Show
+    BaseType "Grand Mana Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel < 24
+
+Show
+    BaseType "Giant Mana Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel < 30
+
+Show
+    BaseType "Colossal Mana Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel < 36
+
+Show
+    BaseType "Sacred Mana Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel < 42
+
+Show
+    BaseType "Hallowed Mana Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel < 50
+
+Show
+    BaseType "Sanctified Mana Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel < 60
+
+Show
+    BaseType "Eternal Mana Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel <= 67
 
 # Hide all other Mana Flasks
 Hide
@@ -131,14 +246,19 @@ Hide
 
 ########################################################################
 #
-#           3E - HYBRID FLASKS
+#           3C - HYBRID FLASKS
 #
 ########################################################################
 
-# Show Unique Hybrid Flasks
-# Large Hybrid Flask = Divination Distillate
+# Show quality Hybrid Flasks with a bluish border
 Show
-    Class "Hybrid Flasks"    
+    Class "Hybrid Flasks"
+    Rarity < Unique
+    Quality > 0
+    SetBorderColor 136 136 255
+
+# Show Divination Distillate
+Show
     BaseType "Large Hybrid Flask"
     Rarity Unique
     PlayAlertSound 1 300
@@ -150,9 +270,16 @@ Hide
 
 ########################################################################
 #
-#           3F - UTILITY FLASKS
+#           3D - UTILITY FLASKS
 #
 ########################################################################
+
+# Show quality Utility Flasks with a bluish border
+Show
+    Class "Utility Flasks"
+    Rarity < Unique
+    Quality > 0
+    SetBorderColor 136 136 255
 
 # Show Unique Utility Flasks
 # Sapphire Flask = Taste of Hate
@@ -182,6 +309,49 @@ Show
     Rarity Unique
     PlayAlertSound 1 300
 
+# Show Utility Flasks dynamically
+Show
+    BaseType "Quicksilver Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel <= 67
+
+Show
+    BaseType "Ruby Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel <= 67
+
+Show
+    BaseType "Sapphire Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel <= 67
+
+Show
+    BaseType "Topaz Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel <= 67
+
+Show
+    BaseType "Granite Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel <= 67
+
+Show
+    BaseType "Jade Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel <= 67
+
+Show
+    BaseType "Sulphur Flask"
+    Rarity < Unique
+    Quality 0
+    ItemLevel <= 67
+
 # Hide all other Utility Flasks
 Hide
     Class "Utility Flasks"
@@ -192,6 +362,13 @@ Hide
 #           3E - CRITICAL UTILITY FLASKS
 #
 ########################################################################
+
+# Show quality Critical Utility Flasks with a bluish border
+Show
+    Class "Critical Utility Flasks"
+    Rarity < Unique
+    Quality > 0
+    SetBorderColor 136 136 25
 
 # Hide all other Critical Utility Flasks
 Hide
