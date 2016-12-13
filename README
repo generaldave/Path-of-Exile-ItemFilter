@@ -47,20 +47,18 @@ The filter I use for endgame is a lot more involved. It handles flasks as indivi
 # 13. Hide non-vendor recipe gears
 # 14. Vendor recipes - Chaos with goldish border, Regal with bluish
 
-I just created a "dynamic" filter. Basically, it just combines the two and switches over to the End Game style around Merciless Dried Lake. The notes are:
+I just created a "dynamic" filter. Basically, it just combines the two and switches over to the End Game style around Merciless Dried Lake. It also handles flasks dynamically, as you level. The notes are:
 
-# 11/11/2016 - Created
+# 12/13.2016 - Updated: Made Flasks dynamic
 #
 # 1.  Quest and Labyrinth Items
 # 2.  Map Fragments
 # 3.  Flasks
-#       3A. Quality Flasks
-#       3B. Dynamic Flasks - Show all 67 and under (Dried Lake)
-#       3C. Life Flasks
-#       3D. Mana Flasks
-#       3E. Hybrid Flasks
-#       3F. Utility Flasks
-#       3G. Critical Utility Flasks
+#       3A. Life Flasks
+#       3B. Mana Flasks
+#       3C. Hybrid Flasks
+#       3D. Utility Flasks
+#       3E. Critical Utility Flasks
 # 4.  Gems - Quality with border, rest without
 # 5.  Currency - Higher teirs with border, rest without
 # 6.  Divination Cards - Only shows ones worth picking up
