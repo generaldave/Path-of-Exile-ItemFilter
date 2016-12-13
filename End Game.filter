@@ -6,9 +6,12 @@
 #
 # 11/2/2016
 # 
-# Updated: 11/8/2016 - Colours changed to be exact game colours.
+# Updated: 11/8/2016  - Colours changed to be exact game colours
+# Updated: 11/10/2016 - Guardian Maps
+# Updated: 11/11/2016 - Fixed Discrepancy in maps
+# Updated: 12/9/2016  - Added rules for Breach Splinters
 #
-# 1.  Quest Items
+# 1.  Quest and Labyrinth Items
 # 2.  Map Fragments
 # 3.  Flasks
 #       3A. Life Flasks
@@ -16,14 +19,17 @@
 #       3C. Hybrid Flasks
 #       3D. Utility Flasks
 #       3E. Critical Utility Flasks
-# 4.  Gems
-# 5.  Currency
-# 6.  Divination Cards
-# 7.  Jewels
-# 8.  Maps
-# 9.  Uniques
+# 4.  Gems - Quality with border, rest without
+# 5.  Currency - Higher teirs with border, rest without
+# 6.  Divination Cards - Only shows ones worth picking up
+# 7.  Jewels - Shows all
+# 8.  Maps - Shows all
+#       8A. Unique Maps
+#       8B. Guardian Maps - Text matches the Atlas
+#       8C. Normal Maps - Text matches the Atlas
+# 9.  Uniques - Show only bases with good uniques
 # 10. Currency Gears - 6 socketed gears and smaller RGB gears
-# 11. 6 linked gears
+# 11. 6 linked gears - Greenish border
 # 12. Fishing Rods
 # 13. Hide non-vendor recipe gears
 # 14. Vendor recipes - Chaos with goldish border, Regal with bluish
@@ -32,12 +38,20 @@
 
 ########################################################################
 #
-# 1 - QUEST ITEMS
+# 1 - QUEST AND LABYRINTH ITEMS
 #
 ########################################################################
 
 Show
     Class "Quest Items"
+    
+# Labyrinth Item = Keys
+Show
+    Class "Labyrinth Item"
+    
+# Labyrinth Trinket = Easier Izaro fights
+Show
+    Class "Labyrinth Trinket"
 
 ########################################################################
 #
@@ -45,9 +59,11 @@ Show
 #
 ########################################################################
 
+# Atziri, Uber Atziri, Pale Court, Guardian map fragments
 Show
     Class "Map Fragments"
     
+# Offering to the Goddess
 Show
     Class "Labyrinth Map Item"
 
@@ -72,7 +88,7 @@ Show
 # Hide all other Life Flasks
 Hide
     Class "Life Flasks"
-    SetFontSize 20
+    SetFontSize 18
 
 ########################################################################
 #
@@ -89,7 +105,7 @@ Show
 # Hide all other Mana Flasks
 Hide
     Class "Mana Flasks"
-    SetFontSize 20
+    SetFontSize 18
 
 ########################################################################
 #
@@ -114,7 +130,7 @@ Show
 # Hide all other Hybrid Flasks
 Hide
     Class "Hybrid Flasks"
-    SetFontSize 20
+    SetFontSize 18
 
 ########################################################################
 #
@@ -159,7 +175,7 @@ Show
 # Hide all other Utility Flasks
 Hide
     Class "Utility Flasks"
-    SetFontSize 20
+    SetFontSize 18
     
 ########################################################################
 #
@@ -176,7 +192,7 @@ Show
 # Hide all other Critical Utility Flasks
 Hide
     Class "Critical Utility Flasks"
-    SetFontSize 20
+    SetFontSize 18
     
 ########################################################################
 #
@@ -200,6 +216,28 @@ Show
 #
 ########################################################################
 
+# Breach Splinters - text colour same as default damage colour
+Show   # Chaos
+	 BaseType "Splinter of Chayula"
+    SetTextColor 208 32 144
+
+Show   # Lightning
+	 BaseType "Splinter of Esh"
+    SetTextColor 255 215 0
+
+Show   # Cold
+	 BaseType "Splinter of Tul"
+    SetTextColor 54 100 146
+
+Show   # Physical
+    BaseType "Splinter of Uul-Netol"
+    SetTextColor 255 192 203
+
+Show   # Fire
+	 BaseType "Splinter of Xoph"
+    SetTextColor 150 0 0
+    
+
 # Show Albino Rhoa Feather - with currency text coloured border and sound
 Show
     BaseType "Albino Rhoa Feather"
@@ -217,15 +255,14 @@ Show
     SetBorderColor 170 158 130
     PlayAlertSound 1 300
 
+# Show mid value currency - with currency text coloured border, no sound
 Show
     BaseType "Orb of Regret" "Orb of Fusing" "Cartographer's Chisel"
     SetBorderColor 170 158 130
-    PlayAlertSound 1 300
 
 Show
     BaseType "Regal Orb" "Jeweller's Orb"
     SetBorderColor 170 158 130
-    PlayAlertSound 1 300
     
 # Show all other currency
 Show
@@ -237,125 +274,125 @@ Show
 #
 ########################################################################
 
-# Show High tier Divination Cards - with sound and bluish border
+# Show sellable Divination Cards - with sound and bluish border
 Show
     Class "Divination"
     BaseType "Abandoned Wealth" "The Aesthete" "The Artist"
-    SetBorderColor 170 230 230
+    SetBorderColor 130 190 255
     PlayAlertSound 1 300
 
 Show
     Class "Divination"
     BaseType "The Avenger" "Bowyer's Dream" "The Brittle Emperor"
-    SetBorderColor 170 230 230
+    SetBorderColor 130 190 255
     PlayAlertSound 1 300
 
 Show
     Class "Divination"
     BaseType "The Calling" "The Cataclysm" "The Celestial Justicar"
-    SetBorderColor 170 230 230
+    SetBorderColor 130 190 255
     PlayAlertSound 1 300
 
 Show
     Class "Divination"
     BaseType "The Chains that Bind" "The Cursed King" "The Dapper Prodigy"
-    SetBorderColor 170 230 230
+    SetBorderColor 130 190 255
     PlayAlertSound 1 300
 
 Show
     Class "Divination"
     BaseType "The Dark Mage" "Death" "Dialla's Subjugation" "The Doctor"
-    SetBorderColor 170 230 230
+    SetBorderColor 130 190 255
     PlayAlertSound 1 300
 
 Show
     Class "Divination"
     BaseType "The Dragon's Heart" "Earth Drinker" "Emperor of Purity"
-    SetBorderColor 170 230 230
+    SetBorderColor 130 190 255
     PlayAlertSound 1 300
 
 Show
     Class "Divination"
     BaseType "The Encroaching Darkness" "The Enlightened" "The Ethereal"
-    SetBorderColor 170 230 230
+    SetBorderColor 130 190 255
     PlayAlertSound 1 300
 
 Show
     Class "Divination"
     BaseType "The Fiend" "The Fletcher" "The Formless Sea" "The Fox"
-    SetBorderColor 170 230 230
+    SetBorderColor 130 190 255
     PlayAlertSound 1 300
 
 Show
     Class "Divination"
     BaseType "Glimmer of Hope" "The Harvester" "The Hoarder" "Hope"
-    SetBorderColor 170 230 230
+    SetBorderColor 130 190 255
     PlayAlertSound 1 300
 
 Show
     Class "Divination"
     BaseType "House of Mirrors" "Humility" "The Hunger" "Hunter's Reward"
-    SetBorderColor 170 230 230
+    SetBorderColor 130 190 255
     PlayAlertSound 1 300
 
 Show
     Class "Divination"
     BaseType "The Immortal" "The Inventor" "Jack in the Box" "The Jester"
-    SetBorderColor 170 230 230
+    SetBorderColor 130 190 255
     PlayAlertSound 1 300
 
 Show
     Class "Divination"
     BaseType "The King's Heart" "Last Hope" "The Last One Standing"
-    SetBorderColor 170 230 230
+    SetBorderColor 130 190 255
     PlayAlertSound 1 300
 
 Show
     Class "Divination"
     BaseType "Lost Worlds" "Lucky Deck" "Lysah's Respite" "Mawr Blaidd"
-    SetBorderColor 170 230 230
+    SetBorderColor 130 190 255
     PlayAlertSound 1 300
 
 Show
     Class "Divination"
     BaseType "Merciless Armament" "The Offering" "The Penitent"
-    SetBorderColor 170 230 230
+    SetBorderColor 130 190 255
     PlayAlertSound 1 300
 
 Show
     Class "Divination"
     BaseType "Pride Before the Fall" "The Queen" "Rats" "Time-Lost Relic"
-    SetBorderColor 170 230 230
+    SetBorderColor 130 190 255
     PlayAlertSound 1 300
 
 Show
     Class "Divination"
     BaseType "The Road to Power" "The Sephirot" "The Soul"
-    SetBorderColor 170 230 230
+    SetBorderColor 130 190 255
     PlayAlertSound 1 300
 
 Show
     Class "Divination"
     BaseType "The Stormcaller" "The Thaumaturgist" "Treasure Hunter"
-    SetBorderColor 170 230 230
+    SetBorderColor 130 190 255
     PlayAlertSound 1 300
 
 Show
     Class "Divination"
     BaseType "The Trial" "The Union" "The Valkyrie" "The Vast"
-    SetBorderColor 170 230 230
+    SetBorderColor 130 190 255
     PlayAlertSound 1 300
 
 Show
     Class "Divination"
     BaseType "Vinia's Token" "The Void" "The Warlord" "Wealth and Power"
-    SetBorderColor 170 230 230
+    SetBorderColor 130 190 255
     PlayAlertSound 1 300
 
 Show
     Class "Divination"
     BaseType "The Wrath"
-    SetBorderColor 170 230 230
+    SetBorderColor 130 190 255
     PlayAlertSound 1 300
 
 # Show all other Divination Cards worth picking up
@@ -366,7 +403,6 @@ Show
 Show
     Class "Divination"
     BaseType "Assassin's Favour" "Audacity" "The Battle Born"
-    SetBorderColor 170 230 230
 
 # The Betrayal = 9 for Maligaro's Virtuosity
 # Blind Venture = 7 for Corrupted unique ring
@@ -375,7 +411,6 @@ Show
 Show
     Class "Divination"
     BaseType "The Betrayal" "Blind Venture" "The Body" "The Cartographer"
-    SetBorderColor 170 230 230
 
 # The Catalyst = 3 for a Vaal Orb
 # Chaotic Disposition = 1 for 5 Chaos
@@ -383,7 +418,6 @@ Show
 Show
     Class "Divination"
     BaseType "The Catalyst" "Chaotic Disposition" "Doedre's Madness"
-    SetBorderColor 170 230 230
 
 # Emperor's Luck =  5 for random 5x currency
 # The Gambler = 5 for random Divination Card
@@ -391,7 +425,6 @@ Show
 Show
     Class "Divination"
     BaseType "Emperor's Luck" "The Gambler" "The Gemcutter"
-    SetBorderColor 170 230 230
 
 # Gemcutter's Promise = 3 for a random 20% gem
 # Her Mask = 4 for a random Sacrifice Fragment
@@ -400,7 +433,6 @@ Show
 Show
     Class "Divination"
     BaseType "Gemcutter's Promise" "Her Mask" "Heterochromia" "Hubris"
-    SetBorderColor 170 230 230
 
 # The Lover = 2 for random rare unid jewellery
 # Lucky Connections = 7 for 20 Orbs of Fusing
@@ -409,19 +441,17 @@ Show
 Show
     Class "Divination"
     BaseType "The Lover" "Lucky Connections" "Rain of Chaos" "The Risk"
-    SetBorderColor 170 230 230
 
 # Scholar of the Seas = 7 for Mao Kun
 # The Surveyor = 4 for a tier 14 map
 Show
     Class "Divination"
     BaseType "Scholar of the Seas" "The Surveyor"
-    SetBorderColor 170 230 230
 
 # Hide the rest of the Divination Cards
 Hide
     Class "Divination"
-    SetFontSize 20
+    SetFontSize 18
 
 ########################################################################
 #
@@ -445,11 +475,53 @@ Show
 #
 ########################################################################
 
+########################################################################
+#
+#           8A - Unique Maps
+#
+########################################################################
+
 # Show unique maps - unique coloured text
 Show
     Class "Maps"
     Rarity Unique
     SetTextColor 175 96 37
+
+########################################################################
+#
+#           8B - Guardian Maps
+#
+########################################################################
+
+# Forge of the Phoenix - red-orange text
+Show 
+    Class "Maps"
+    BaseType "Forge of the Phoenix"
+	 SetTextColor 250 140 0
+
+# Lair of the Hydra - spring-green text
+Show 
+    Class "Maps"
+    BaseType "Lair of the Hydra"
+	 SetTextColor 0 255 127
+
+# Maze of the Minotaur - tomato text
+Show 
+    Class "Maps"
+    BaseType "Maze of the Minotaur"
+	 SetTextColor 255 99 71
+
+# Pit of the Chimera - deep-pink text
+Show 
+    Class "Maps"
+    BaseType "Pit of the Chimera"
+	 SetTextColor 255 20 147
+
+########################################################################
+#
+#           8C - Normal Maps
+#
+########################################################################
 
 # High Tier Maps - red text
 Show
@@ -463,11 +535,11 @@ Show
     DropLevel >= 73
     SetTextColor 228 194 60
 
-# Low Tier Maps - grey text
+# Low Tier Maps - white text
 Show 
     Class "Maps" 
-    DropLevel >= 69
-    SetTextColor 105 105 105
+    DropLevel >= 58
+    SetTextColor 255 255 255
 
 # Make sure all maps are shown
 Show 
@@ -540,6 +612,7 @@ Show
 # Crusader Boots = Death's Door
 # Jasper Chopper = The Harvest
 # Judgement Staff = Hegemony's Era
+
 Show
     Rarity Unique
     BaseType "Crusader Boots" "Jasper Chopper" "Judgement Staff"
@@ -635,7 +708,7 @@ Show
 Hide
     Rarity Unique
     PlayAlertSound 1 0
-    SetFontSize 20
+    SetFontSize 18
 
 ########################################################################
 #
@@ -687,7 +760,7 @@ Show
 
 Hide
     Class "Dagger" "Shield" "Wand" "Claw" "One Hand" "Quiver" "Sceptres"
-    SetFontSize 20
+    SetFontSize 18
 
 ########################################################################
 #
@@ -709,4 +782,4 @@ Show
 
 # Hide non vendor recipe gears
 Hide
-    SetFontSize 20
+    SetFontSize 18
